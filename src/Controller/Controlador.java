@@ -56,4 +56,8 @@ public class Controlador {
     public void cargarFichero(){
         ControladorFichero.cargarFichero(almacen);
     }
+
+    public Producto buscarproducto(String id){
+        return almacen.getProducto(id);
+    }
 }

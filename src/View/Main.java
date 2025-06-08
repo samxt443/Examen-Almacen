@@ -2,6 +2,7 @@ package View;
 
 import Controller.Controlador;
 import Controller.ControladorFichero;
+import Model.Comparator.ComparatorStock;
 import Model.Consumible;
 import Model.Periferico;
 import Model.Producto;
@@ -36,6 +37,7 @@ public class Main {
         System.out.println("5. Ordenar productos por precio");
         System.out.println("6. Grabar Fichero");
         System.out.println("7. Cargar Fichero");
+        System.out.println("8. Buscar producto por id");
         System.out.println("0. Salir");
         System.out.println("--------------------------------");
     }
@@ -86,7 +88,7 @@ public class Main {
                 cargarFichero();
                 break;
             case 8:
-
+                buscarProducto();
                 break;
             case 9:
 
@@ -150,13 +152,13 @@ public class Main {
 
     public static void mostrarProductos() {
         System.out.println("..................\nProductos:\n..............");
-        for (Producto producto : Controlador.getSingleton().getListProducto()){
+        for (Producto producto : Controlador.getSingleton().getListProducto(new ComparatorStock())){
             System.out.println(producto.toStringProductoCantidadStock());
         }
     }
 
     public static void mostrarProductosSubtipo(){
-        System.out.println("¿Qué producto desea ver?\n1.Todos\n2.Consumible\n3.Periferico");
+        System.out.println("¿Qué producto desea ver?\n1.Todos\n2.Periferico\n3.Consumible");
         int opcion = leerValorInt();
         mostrarProductosSubtipo(opcion);
     }
@@ -216,6 +218,13 @@ public class Main {
         Controlador.getSingleton().cargarFichero();
     }
 
-
+    public static void buscarProducto(){
+        String id = leerValor("id");
+        if (Controlador.getSingleton().buscarproducto(id) == null){
+            System.out.println("No existe el producto con el id: " + id);
+        }else{
+            System.out.println(Controlador.getSingleton().buscarproducto(id));
+        }
+    }
 
 }

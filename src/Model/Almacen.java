@@ -1,6 +1,10 @@
 package Model;
 
+import Model.Comparator.ComparatorStock;
+
 import java.util.*;
+
+
 
 public class Almacen {
 
@@ -71,17 +75,14 @@ public class Almacen {
 
     //3. Mostrar todos los productos
     public ArrayList<Producto> getListaP() {
-        /*List<Producto> lista = new ArrayList<>();
-        for(Producto p : miMapaP.values()) {
-            lista.add(p);
-        }
-        return lista;*/
-        return miListaP;
+        ArrayList<Producto> lista = new ArrayList<>(miListaP);
+        lista.sort(new ComparatorStock());
+        return lista;
     }
 
     //4.Mostrar productos de un subtipo(periferico o consumibles)
-    public List<Periferico> getListaPerifericos() {
-        List<Periferico> perifericos = new ArrayList<>();
+    public ArrayList<Periferico> getListaPerifericos() {
+        ArrayList<Periferico> perifericos = new ArrayList<>();
         for(Producto p : miListaP) {
             if(p instanceof Periferico){ //Con isntance of buscamos solo los productos que queremos
                 perifericos.add((Periferico) p); //Index --> Periferico y el Periferico --> p
@@ -109,6 +110,16 @@ public class Almacen {
         }
         productos.sort(comparator);
         return productos;
+    }
+
+    //8. Buscar por id
+    public Producto getProducto(String id) {
+        for (Producto p : miListaP) {
+            if (p.getId().compareTo(id) == 0) {
+                return p;
+            }
+        }
+        return null;
     }
 
 
