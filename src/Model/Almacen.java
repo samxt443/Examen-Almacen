@@ -6,7 +6,7 @@ public class Almacen {
 
     private String id;
 
-    List<Producto> miListaP;
+    ArrayList<Producto> miListaP;
     Map<String, Producto> miMapaP;
 
     public Almacen(String id) {
@@ -70,7 +70,7 @@ public class Almacen {
     }
 
     //3. Mostrar todos los productos
-    public List<Producto> getListaP() {
+    public ArrayList<Producto> getListaP() {
         /*List<Producto> lista = new ArrayList<>();
         for(Producto p : miMapaP.values()) {
             lista.add(p);
@@ -90,8 +90,8 @@ public class Almacen {
         return perifericos;
     }
 
-    public List<Consumible> getListaConsumibles() {
-        List<Consumible> consumibles = new ArrayList<>();
+    public ArrayList<Consumible> getListaConsumibles() {
+        ArrayList<Consumible> consumibles = new ArrayList<>();
         for(Producto p : miListaP) {
             if(p instanceof Consumible){
                 consumibles.add((Consumible) p);
@@ -102,12 +102,14 @@ public class Almacen {
 
     //5.Ordenar productos por precio
 
-    public List<Producto>  getListaProductos(Comparator comparator) {
-        List<Producto> productos = new ArrayList<>();
+    public ArrayList<Producto>  getListaProductos(Comparator comparator) {
+        ArrayList<Producto> productos = new ArrayList<>();
         for(Producto p : miListaP) {
             productos.add(p);
         }
         productos.sort(comparator);
         return productos;
     }
+
+
 }

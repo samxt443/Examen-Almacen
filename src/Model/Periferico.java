@@ -28,4 +28,8 @@ public class Periferico extends Producto {
                 '}';
     }
 
+    @Override
+    public String toCSV() {
+        return "Periferico;"+super.toCSV() + ";" + inalambrico + ";" + observaciones;
+    }
 }

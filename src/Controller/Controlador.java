@@ -48,4 +48,12 @@ public class Controlador {
     public List<Consumible> getListaConsumible(){
         return almacen.getListaConsumibles();
     }
+
+    public void grabarFichero(){
+        ControladorFichero.grabarFichero(almacen);
+    }
+
+    public void cargarFichero(){
+        ControladorFichero.cargarFichero(almacen);
+    }
 }

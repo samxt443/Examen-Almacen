@@ -20,4 +20,9 @@ public class Consumible extends Producto {
                 "capacidad=" + capacidad +
                 '}';
     }
+
+    @Override
+    public String toCSV() {
+        return "Consumible;"+super.toCSV() + ";" + capacidad;
+    }
 }

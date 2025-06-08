@@ -63,10 +63,8 @@ public class Producto {
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", cantidadStock=" + cantidadStock +
-                ", precio=" + precio +
-                '}';
+                ", precio=" + precio;
     }
-
 
     public String toStringProductoCantidadStock() {
         return "Producto{" +
@@ -74,5 +72,9 @@ public class Producto {
                 ", nombre='" + nombre + '\'' +
                 ", cantidadStock=" + cantidadStock +
                 '}';
+    }
+
+    public String toCSV(){
+        return id + ";" + nombre + ";" + descripcion + ";" + cantidadStock + ";" + precio;
     }
 }

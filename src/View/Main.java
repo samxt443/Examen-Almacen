@@ -1,6 +1,7 @@
 package View;
 
 import Controller.Controlador;
+import Controller.ControladorFichero;
 import Model.Consumible;
 import Model.Periferico;
 import Model.Producto;
@@ -33,6 +34,8 @@ public class Main {
         System.out.println("3. Mostrar todos los productos y cantidades");
         System.out.println("4. Mostrar los productos de un subtipo (periféricos o consumibles)");
         System.out.println("5. Ordenar productos por precio");
+        System.out.println("6. Grabar Fichero");
+        System.out.println("7. Cargar Fichero");
         System.out.println("0. Salir");
         System.out.println("--------------------------------");
     }
@@ -77,10 +80,10 @@ public class Main {
                 ordenarPrecio();
                 break;
             case 6:
-
+                grabarFichero();
                 break;
             case 7:
-
+                cargarFichero();
                 break;
             case 8:
 
@@ -125,7 +128,7 @@ public class Main {
 
     public static void añadirConsumible() {
         Consumible consumible = new Consumible(leerValor("id"),leerValor("nombre"),leerValor("descripcion"),leerValorIntTexto("cantidad de Stock"),leerValorDouble("precio"),leerValorDouble("capacidad"));
-        if(consumible.getCapacidad() <= 0) {
+        if(consumible.getCapacidad() > 0) {
             if(Controlador.getSingleton().addProducto(consumible)) {
                 System.out.println("Consumible añadido con exito");
             }else{
@@ -203,6 +206,14 @@ public class Main {
         })){
             System.out.println(p.toString());
         }
+    }
+
+    public static void grabarFichero(){
+        Controlador.getSingleton().grabarFichero();
+    }
+
+    public static void cargarFichero(){
+        Controlador.getSingleton().cargarFichero();
     }
 
 
