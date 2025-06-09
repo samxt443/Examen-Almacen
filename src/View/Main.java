@@ -1,7 +1,6 @@
 package View;
 
 import Controller.Controlador;
-import Controller.ControladorFichero;
 import Model.Comparator.ComparatorStock;
 import Model.Consumible;
 import Model.Periferico;
@@ -153,7 +152,7 @@ public class Main {
     public static void mostrarProductos() {
         System.out.println("..................\nProductos:\n..............");
         for (Producto producto : Controlador.getSingleton().getListProducto(new ComparatorStock())){
-            System.out.println(producto.toStringProductoCantidadStock());
+            System.out.println(producto.nombreCantidadStock());
         }
     }
 

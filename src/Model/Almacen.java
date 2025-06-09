@@ -103,11 +103,8 @@ public class Almacen {
 
     //5.Ordenar productos por precio
 
-    public ArrayList<Producto>  getListaProductos(Comparator comparator) {
-        ArrayList<Producto> productos = new ArrayList<>();
-        for(Producto p : miListaP) {
-            productos.add(p);
-        }
+    public ArrayList<Producto>  getListaProductos(Comparator<Producto> comparator) {
+        ArrayList<Producto> productos = new ArrayList<>(miListaP);
         productos.sort(comparator);
         return productos;
     }

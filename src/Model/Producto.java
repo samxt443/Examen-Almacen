@@ -66,7 +66,7 @@ public class Producto {
                 ", precio=" + precio;
     }
 
-    public String toStringProductoCantidadStock() {
+    public String nombreCantidadStock() {
         return "Producto{" +
                 "id='" + id + '\'' +
                 ", nombre='" + nombre + '\'' +
