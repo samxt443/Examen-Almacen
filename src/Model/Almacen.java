@@ -111,12 +111,13 @@ public class Almacen {
 
     //8. Buscar por id
     public Producto getProducto(String id) {
-        for (Producto p : miListaP) {
+        //Inecesario
+        /*for (Producto p : miListaP) {
             if (p.getId().compareTo(id) == 0) {
                 return p;
             }
-        }
-        return null;
+        }*/
+        return miMapaP.get(id);
     }
 
 
