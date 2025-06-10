@@ -10,7 +10,7 @@ public class Almacen {
 
     private String id;
 
-    ArrayList<Producto> miListaP;
+    List<Producto> miListaP;
     Map<String, Producto> miMapaP;
 
     public Almacen(String id) {
@@ -31,18 +31,8 @@ public class Almacen {
             Producto p = miMapaP.get(producto.getId());
             //Precio
             p.setPrecio(producto.getPrecio());
-            for(Producto pList : miListaP) {
-               if(pList.getId().compareTo(p.getId()) == 0) {
-                   pList.setPrecio(producto.getPrecio());
-               }
-           }
            //Cantidad de stock
            p.setCantidadStock(p.getCantidadStock() + producto.getCantidadStock());
-           for(Producto pList : miListaP) {
-               if(pList.getId().compareTo(p.getId()) == 0) {
-                   pList.setCantidadStock(producto.getCantidadStock() + pList.getCantidadStock());
-               }
-           }
            return true;
        }else{
            //Añadimos en el mapa y la lista el Producto nuevo
@@ -74,15 +64,15 @@ public class Almacen {
     }
 
     //3. Mostrar todos los productos
-    public ArrayList<Producto> getListaP() {
-        ArrayList<Producto> lista = new ArrayList<>(miListaP);
+    public List<Producto> getListaP() {
+        List<Producto> lista = new ArrayList<>(miListaP);
         lista.sort(new ComparatorStock());
         return lista;
     }
 
     //4.Mostrar productos de un subtipo(periferico o consumibles)
-    public ArrayList<Periferico> getListaPerifericos() {
-        ArrayList<Periferico> perifericos = new ArrayList<>();
+    public List<Periferico> getListaPerifericos() {
+        List<Periferico> perifericos = new ArrayList<>();
         for(Producto p : miListaP) {
             if(p instanceof Periferico){ //Con isntance of buscamos solo los productos que queremos
                 perifericos.add((Periferico) p); //Index --> Periferico y el Periferico --> p
@@ -91,8 +81,8 @@ public class Almacen {
         return perifericos;
     }
 
-    public ArrayList<Consumible> getListaConsumibles() {
-        ArrayList<Consumible> consumibles = new ArrayList<>();
+    public List<Consumible> getListaConsumibles() {
+        List<Consumible> consumibles = new ArrayList<>();
         for(Producto p : miListaP) {
             if(p instanceof Consumible){
                 consumibles.add((Consumible) p);
@@ -103,8 +93,8 @@ public class Almacen {
 
     //5.Ordenar productos por precio
 
-    public ArrayList<Producto>  getListaProductos(Comparator<Producto> comparator) {
-        ArrayList<Producto> productos = new ArrayList<>(miListaP);
+    public List<Producto>  getListaProductos(Comparator<Producto> comparator) {
+        List<Producto> productos = new ArrayList<>(miListaP);
         productos.sort(comparator);
         return productos;
     }

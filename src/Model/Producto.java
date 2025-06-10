@@ -63,7 +63,7 @@ public class Producto {
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", cantidadStock=" + cantidadStock +
-                ", precio=" + precio;
+                ", precio=" + precio +'\'';
     }
 
     public String nombreCantidadStock() {
