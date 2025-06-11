@@ -4,8 +4,6 @@ import Model.Comparator.ComparatorStock;
 
 import java.util.*;
 
-
-
 public class Almacen {
 
     private String id;
