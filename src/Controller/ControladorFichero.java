@@ -8,6 +8,7 @@ import Model.Producto;
 import java.awt.print.Printable;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ControladorFichero {
@@ -18,7 +19,7 @@ public class ControladorFichero {
         ControladorFichero.grabarProductos(almacen.getListaP());
     }
 
-    public static void grabarProductos(ArrayList<Producto> listaProductos) {
+    public static void grabarProductos(List<Producto> listaProductos) {
         PrintWriter pw = null;
         try{
             pw = new PrintWriter(new FileWriter(FICHEROPRODUCTOS));

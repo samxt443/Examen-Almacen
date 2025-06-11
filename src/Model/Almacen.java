@@ -10,7 +10,7 @@ public class Almacen {
 
     private String id;
 
-    ArrayList<Producto> miListaP;
+    List<Producto> miListaP;
     Map<String, Producto> miMapaP;
 
     public Almacen(String id) {
@@ -31,18 +31,8 @@ public class Almacen {
             Producto p = miMapaP.get(producto.getId());
             //Precio
             p.setPrecio(producto.getPrecio());
-            for(Producto pList : miListaP) {
-               if(pList.getId().compareTo(p.getId()) == 0) {
-                   pList.setPrecio(producto.getPrecio());
-               }
-           }
            //Cantidad de stock
            p.setCantidadStock(p.getCantidadStock() + producto.getCantidadStock());
-           for(Producto pList : miListaP) {
-               if(pList.getId().compareTo(p.getId()) == 0) {
-                   pList.setCantidadStock(producto.getCantidadStock() + pList.getCantidadStock());
-               }
-           }
            return true;
        }else{
            //Añadimos en el mapa y la lista el Producto nuevo
@@ -74,14 +64,14 @@ public class Almacen {
     }
 
     //3. Mostrar todos los productos
-    public ArrayList<Producto> getListaP() {
+    public List<Producto> getListaP() {
         ArrayList<Producto> lista = new ArrayList<>(miListaP);
         lista.sort(new ComparatorStock());
         return lista;
     }
 
     //4.Mostrar productos de un subtipo(periferico o consumibles)
-    public ArrayList<Periferico> getListaPerifericos() {
+    public List<Periferico> getListaPerifericos() {
         ArrayList<Periferico> perifericos = new ArrayList<>();
         for(Producto p : miListaP) {
             if(p instanceof Periferico){ //Con isntance of buscamos solo los productos que queremos
@@ -91,7 +81,7 @@ public class Almacen {
         return perifericos;
     }
 
-    public ArrayList<Consumible> getListaConsumibles() {
+    public List<Consumible> getListaConsumibles() {
         ArrayList<Consumible> consumibles = new ArrayList<>();
         for(Producto p : miListaP) {
             if(p instanceof Consumible){
@@ -103,7 +93,7 @@ public class Almacen {
 
     //5.Ordenar productos por precio
 
-    public ArrayList<Producto>  getListaProductos(Comparator<Producto> comparator) {
+    public List<Producto>  getListaProductos(Comparator<Producto> comparator) {
         ArrayList<Producto> productos = new ArrayList<>(miListaP);
         productos.sort(comparator);
         return productos;
@@ -111,12 +101,6 @@ public class Almacen {
 
     //8. Buscar por id
     public Producto getProducto(String id) {
-        //Inecesario
-        /*for (Producto p : miListaP) {
-            if (p.getId().compareTo(id) == 0) {
-                return p;
-            }
-        }*/
         return miMapaP.get(id);
     }
 
