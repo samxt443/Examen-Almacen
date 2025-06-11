@@ -30,6 +30,6 @@ public class Periferico extends Producto {
 
     @Override
     public String toCSV() {
-        return "Periferico;"+super.toCSV() + ";" + inalambrico + ";" + observaciones;
+        return "Periferico;"+super.toCSVSinproducto() + ";" + inalambrico + ";" + observaciones;
     }
 }

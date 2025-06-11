@@ -105,21 +105,31 @@ public class Main {
     }
 
     public static void addProducto() {
-        System.out.println("¿Qué producto desea añadir?\n1.Periferico\n2.Consumible");
+        System.out.println("¿Qué producto desea añadir?\n1.Periferico\n2.Consumible\n 3.Producto");
         int opcion = leerValorInt();
         tipoDeProducto(opcion);
     }
 
     public static void tipoDeProducto(int opcion) {
         switch(opcion){
-            case 1: añadirPeriferico();
+            case 1: anadirPeriferico();
             break;
-            case 2: añadirConsumible();
+            case 2: anadirConsumible();
             break;
+            case 3: anadirProducto();
         }
     }
 
-    public static void añadirPeriferico() {
+    public static void anadirProducto() {
+        Producto p = new Producto(leerValor("id"),leerValor("nombre"),leerValor("descripcion"),leerValorIntTexto("cantidad de Stock"),leerValorDouble("precio"));
+        if(Controlador.getSingleton().addProducto(p)) {
+            System.out.println("Producto añadido con exito");
+        }else{
+            System.out.println("Error al añadir el producto");
+        }
+    }
+
+    public static void anadirPeriferico() {
         Periferico periferico = new Periferico(leerValor("id"),leerValor("nombre"),leerValor("descripcion"),leerValorIntTexto("cantidad de Stock"),leerValorDouble("precio"),leerValorBoolean("inalambrico"),leerValor("observaciones"));
         if(Controlador.getSingleton().addProducto(periferico)) {
             System.out.println("Periferico añadido con exito");
@@ -128,7 +138,7 @@ public class Main {
         }
     }
 
-    public static void añadirConsumible() {
+    public static void anadirConsumible() {
         Consumible consumible = new Consumible(leerValor("id"),leerValor("nombre"),leerValor("descripcion"),leerValorIntTexto("cantidad de Stock"),leerValorDouble("precio"),leerValorDouble("capacidad"));
         if(consumible.getCapacidad() > 0) {
             if(Controlador.getSingleton().addProducto(consumible)) {

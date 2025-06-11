@@ -62,6 +62,13 @@ public class ControladorFichero {
                             Double.parseDouble(partes[5]),
                             Double.parseDouble(partes[6])));
                     break;
+                    case "Producto": Controlador.getSingleton().addProducto(new Producto(
+                            partes[1],
+                            partes[2],
+                            partes[3],
+                            Integer.parseInt(partes[4]),
+                            Double.parseDouble(partes[5])));
+                    break;
                 }
             }
         }catch(FileNotFoundException e){

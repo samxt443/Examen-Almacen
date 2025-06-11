@@ -23,6 +23,6 @@ public class Consumible extends Producto {
 
     @Override
     public String toCSV() {
-        return "Consumible;"+super.toCSV() + ";" + capacidad;
+        return "Consumible;"+super.toCSVSinproducto() + ";" + capacidad;
     }
 }

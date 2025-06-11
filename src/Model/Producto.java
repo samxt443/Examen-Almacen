@@ -75,6 +75,10 @@ public class Producto {
     }
 
     public String toCSV(){
+        return "Producto;"+ id + ";" + nombre + ";" + descripcion + ";" + cantidadStock + ";" + precio;
+    }
+
+    public String toCSVSinproducto(){
         return id + ";" + nombre + ";" + descripcion + ";" + cantidadStock + ";" + precio;
     }
 }

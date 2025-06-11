@@ -1,15 +1,16 @@
+Periferico;I001;Impresora laser monocromatica;Impresora laser con impresion a doble cara automatica;15;179.99;false;Compatible con Wi-Fi y Ethernet
+Producto;P001;Nuevo;jadn;22;33.0
+Periferico;W001;Webcam HD 1080p;Webcam con resolución 1080p y micrófono integrado.;25;49.99;false;Conexion USB 3.0
 Periferico;T001;Teclado mecánico RGB;Teclado mecánico con retroiluminación RGB y switches azules.;30;89.99;false;Conexión USB 2.0
+Periferico;AL001;Altavoces Bluetooth portatiles;Altavoces portatiles con conexion Bluetooth y resistencia al agua;35;39.99;false;Autonomia de 10 horas
+Periferico;A001;Auriculares con micrófono y cancelación de ruido;Auriculares con cancelación de ruido y micrófono integrado.;40;59.99;true;Compatibles con Bluetooth 5.0
+Periferico;D001;Disco duro externo 1TB;Disco duro externo con capacidad de 1TB y conexion USB 3.0;45;69.99;false;Compatible con Windows y Mac
 Periferico;R001;Ratón inalámbrico ergonómico;Ratón ergonómico con conexión inalámbrica y sensor láser.;50;29.99;true;Compatible con Windows 10 y superior
 Periferico;M001;Monitor 4K 28 pulgadas;Monitor con resolución 4K y panel IPS.;60;349.99;false;Conexión HDMI y DisplayPort
-Periferico;A001;Auriculares con micrófono y cancelación de ruido;Auriculares con cancelación de ruido y micrófono integrado.;40;59.99;true;Compatibles con Bluetooth 5.0
-Periferico;W001;Webcam HD 1080p;Webcam con resolución 1080p y micrófono integrado.;25;49.99;false;Conexion USB 3.0
-Periferico;I001;Impresora laser monocromatica;Impresora laser con impresion a doble cara automatica;15;179.99;false;Compatible con Wi-Fi y Ethernet
-Periferico;D001;Disco duro externo 1TB;Disco duro externo con capacidad de 1TB y conexion USB 3.0;45;69.99;false;Compatible con Windows y Mac
-Periferico;AL001;Altavoces Bluetooth portatiles;Altavoces portatiles con conexion Bluetooth y resistencia al agua;35;39.99;false;Autonomia de 10 horas
-Consumible;TIN001;Cartucho de tinta negra;Cartucho de tinta negra para impresoras de inyección de tinta.;100;19.99;20.0
-Consumible;TIC001;Cartucho de tinta a color;Cartucho de tinta a color para impresoras de inyección de tinta.;80;24.99;15.0
-Consumible;PF001;Papel fotográfico brillante;Papel fotográfico brillante para impresiones de alta calidad.;200;14.99;50.0
-Consumible;PN001;Paquete de papel A4;Paquete de 500 hojas de papel A4 para uso general;150;4.99;500.0
-Consumible;B001;Paquete de baterías AA;Paquete de 10 baterías AA alcalinas;200;7.99;10.0
 Consumible;C001;Cable HDMI 2.0;Cable HDMI de alta velocidad, 2 metros;60;9.99;1.0
 Consumible;U001;USB Flash Drive 64GB;Unidad flash USB con capacidad de 64GB;70;19.99;1.0
+Consumible;TIC001;Cartucho de tinta a color;Cartucho de tinta a color para impresoras de inyección de tinta.;80;24.99;15.0
+Consumible;TIN001;Cartucho de tinta negra;Cartucho de tinta negra para impresoras de inyección de tinta.;100;19.99;20.0
+Consumible;PN001;Paquete de papel A4;Paquete de 500 hojas de papel A4 para uso general;150;4.99;500.0
+Consumible;PF001;Papel fotográfico brillante;Papel fotográfico brillante para impresiones de alta calidad.;200;14.99;50.0
+Consumible;B001;Paquete de baterías AA;Paquete de 10 baterías AA alcalinas;200;7.99;10.0

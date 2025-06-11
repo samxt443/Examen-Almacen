@@ -69,6 +69,23 @@ public class Almacen {
         lista.sort(new ComparatorStock());
         return lista;
     }
+    //Lista subtipos
+    /*public List<Producto> getListaSubtipo(int opcion) {
+        List<Producto> lista = new ArrayList<>();
+        String classname = "";
+        switch (opcion) {
+            case 0 : classname = Periferico.class.getName();
+            break;
+            case 1 : classname = Consumible.class.getName();
+        }
+
+        for(Producto producto : miListaP) {
+            if(producto){
+               lista.add(producto);
+            }
+        }
+
+    }*/
 
     //4.Mostrar productos de un subtipo(periferico o consumibles)
     public List<Periferico> getListaPerifericos() {
