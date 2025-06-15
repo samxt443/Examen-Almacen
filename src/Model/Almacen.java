@@ -70,7 +70,7 @@ public class Almacen {
         return lista;
     }
     //Lista subtipos
-    /*public List<Producto> getListaSubtipo(int opcion) {
+    public List<Producto> getListaSubtipo(int opcion) {
         List<Producto> lista = new ArrayList<>();
         String classname = "";
         switch (opcion) {
@@ -79,13 +79,19 @@ public class Almacen {
             case 1 : classname = Consumible.class.getName();
         }
 
-        for(Producto producto : miListaP) {
-            if(producto){
-               lista.add(producto);
+        for (Producto producto : miListaP) {
+            try {
+                if (Class.forName(classname).isInstance(producto)) {
+                    lista.add(producto);
+                }
+            } catch (ClassCastException | ClassNotFoundException e) {
+                return null;
             }
         }
+        return  lista;
 
-    }*/
+
+    }
 
     //4.Mostrar productos de un subtipo(periferico o consumibles)
     public List<Periferico> getListaPerifericos() {
@@ -126,6 +132,8 @@ public class Almacen {
         }*/
         return miMapaP.get(id);
     }
+
+    //Añadir funcion que elija n productos para ponerlos de oferta
 
 
 }

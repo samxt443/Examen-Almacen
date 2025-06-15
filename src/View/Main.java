@@ -121,8 +121,8 @@ public class Main {
     }
 
     public static void anadirProducto() {
-        Producto p = new Producto(leerValor("id"),leerValor("nombre"),leerValor("descripcion"),leerValorIntTexto("cantidad de Stock"),leerValorDouble("precio"));
-        if(Controlador.getSingleton().addProducto(p)) {
+
+        if(Controlador.getSingleton().addProducto(leerValor("id"),leerValor("nombre"),leerValor("descripcion"),leerValorIntTexto("cantidad de Stock"),leerValorDouble("precio"))) {
             System.out.println("Producto añadido con exito");
         }else{
             System.out.println("Error al añadir el producto");

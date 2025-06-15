@@ -7,6 +7,7 @@ import Model.Producto;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 public class Controlador {
 
@@ -26,7 +27,13 @@ public class Controlador {
         almacen.getId(id);
     }
 
-    public boolean addProducto(Producto producto){
+    public boolean addProducto(Map<String,String> mapita){
+        Producto producto=null;
+        if (mapita.get("Clase").equals("Producto")) {
+            producto = new Producto(mapita.get("id"), mapita.get("nombre"), descripcion, cantidad, precio);
+        } else if (mapita.get("Clase").equals("Consumible")) {
+            producto = new Consumible(mapita.get("id"), mapita.get("nombre"), descripcion, cantidad, precio);
+        }
         return almacen.addProducto(producto);
     }
 
